@@ -8,19 +8,38 @@ def selection_sort(arr):
         # (hint, can do in 3 loc)
         # Your code here
 
-
         # TO-DO: swap
         # Your code here
 
     return arr
 
 
+l = [5, 1, 8, 2, 31, 15, 99, 54, 6, 40]
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort(arr):
-    # Your code here
 
+
+def bubble_sort(arr):
+    # from i=0, compare i and i+1
+    # The index with higher value stays on the right, the index with the lower value stays on the left
+    # If arr[i] > arr[i+1], swap their position. (arr[i]=arr[i+1] and arr[i+1]= arr[i])
+    # If at least one swap, repeat
+    # Your code here
+    swap = True
+    while swap:
+        count = 0
+        for i in range(0, len(arr)-1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                count += 1
+        if count == 0:
+            swap = False
 
     return arr
+
+
+bubble = bubble_sort(l)
+print(bubble)
+
 
 '''
 STRETCH: implement the Count Sort function below
@@ -39,8 +58,9 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
-
 
     return arr

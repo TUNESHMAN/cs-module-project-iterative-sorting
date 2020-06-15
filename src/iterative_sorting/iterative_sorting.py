@@ -1,17 +1,27 @@
 # TO-DO: Complete the selection_sort() function below
+g = [21, 5, 8, 65, 4, 33, 99, 87, 56, 1]
+# First loop checks for the smallest and puts it in index i
+#
+
+
 def selection_sort(arr):
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    for i in range(0, len(arr)):
+        #cur_index = i
+        smallest_index = i
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
-        # TO-DO: swap
-        # Your code here
+        for j in range(i+1, len(arr)):
+            if arr[smallest_index] > arr[j]:
+                smallest_index = j
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
     return arr
+
+
+selected = selection_sort(g)
+print(selected)
 
 
 l = [5, 1, 8, 2, 31, 15, 99, 54, 6, 40]
@@ -38,7 +48,7 @@ def bubble_sort(arr):
 
 
 bubble = bubble_sort(l)
-print(bubble)
+# print(bubble)
 
 
 '''
